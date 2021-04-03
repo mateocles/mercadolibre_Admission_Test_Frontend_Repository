@@ -1,7 +1,8 @@
-import { apiUrl } from '../Config/Config';
 
+const apiUrl = "http://localhost:3000/api/";
 export class Api {
 	get(url, params) {
+		console.log(`${apiUrl}${url}`);
 		url = new URL(`${apiUrl}${url}`);
 		if (params) Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
 		return fetch(url, {

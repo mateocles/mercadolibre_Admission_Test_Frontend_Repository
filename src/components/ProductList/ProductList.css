@@ -1,4 +1,53 @@
-.site-card-border-less-wrapper {
-  padding: 30px;
-  background: #ececec;
+.imgProduct {
+  height: 180px;
+  width: 180px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+.containerProduct {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+}
+.listContainer {
+  background-color: #ffffff !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.dividerList {
+  margin: 0px !important;
+  width: 90% !important;
+  min-width: 90% !important;
+}
+.spanPrice {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #333;
+  margin-bottom: 32px;
+}
+.imgFreeShipping {
+  width: 20px;
+  margin-left: 16px;
+}
+.price {
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+.detail{  
+  font-size: 18px;  
+  font-weight: 400;
+  line-height: 1.25;
+  color: #333;
+}
+.country{
+  padding-top: 32px;
+  padding-left: 16px;
+  font-size: 12px;  
+  font-weight: 400;
+  line-height: 1.25;
+  color: #333;
 }

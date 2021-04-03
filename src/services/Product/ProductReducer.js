@@ -1,18 +1,18 @@
 import { handleActions } from "redux-actions";
 
 export const INITIAL_STATE = {
-  department: [],
+  products: {},
   loading: false,
   message: undefined,
   error: false,
 };
 
-const reducerMenu = handleActions(
+const reducerProduct = handleActions(
   {
-    MENU: {
-      GET_MENU_RESPONSE: {
+    PRODUCT: {
+      GET_PRODUCT_RESPONSE: {
         next(state, { payload: { data } }) {
-          return { ...state, loading: false, data: data };
+          return { ...state, loading: false, products: data };
         },
         throw(state, { error, payload: { message } }) {
           return { ...state, error, message };
@@ -23,4 +23,4 @@ const reducerMenu = handleActions(
   INITIAL_STATE
 );
 
-export default reducerMenu;
+export default reducerProduct;

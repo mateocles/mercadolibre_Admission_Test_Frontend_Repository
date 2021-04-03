@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home } from "../../HomePage/Home";
+import { Home } from "../../Home/Home";
 
 export const Public = () => {
   return (

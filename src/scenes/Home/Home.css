@@ -1,0 +1,13 @@
+.container {
+  background-color: #eeeeee;
+}
+.breadCrumb {
+  margin-top: 16px;
+  margin-bottom: 16px;  
+  font-size: 14px;  
+}
+.content {
+  padding-right: 25%;
+  padding-left: 21%;
+  padding-bottom: 20%;
+}
