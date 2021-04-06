@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Breadcrumb, Layout } from "antd";
 import { Home } from "../../Home/Home";
 import ProductDetail from "../../../components/ProductDetail/ProductDetail";
+import { Error } from "../../../components/Error/Error";
 import { Header } from "../../../components/Header/Header";
 import "./public.scss";
 
@@ -26,7 +27,7 @@ export const Public = ({ history }) => {
             <Route exact path="/items/:id" component={ProductDetail} />
             <Route exact path="/items" component={Home} />
             <Router path="*">
-              <div>404</div>
+              <Error />
             </Router>
           </Switch>
         </Content>

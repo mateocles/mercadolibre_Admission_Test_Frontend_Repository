@@ -1,79 +1,67 @@
 import React, { useEffect } from "react";
-import { Row, Col, Carousel, Button } from "antd";
-import { useDispatch } from "react-redux";
+import { Row, Col, Carousel, Button, Skeleton } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { product } from "../../services/ProductDetail/ProductDetailActions";
 import "./ProductDetail.scss";
-import logo from "../../assets/images/pc.png";
 
 const ProductDetail = () => {
+  const productDetail = useSelector((state) => state.productDetail);
   const dispatch = useDispatch();
   let { id } = useParams();
-  const letras =
-    " Fotos amplias y perfectas de día y de noche <br> dfasdfasdfasdfasdfasdfasdfasd";
   useEffect(() => {
+    dispatch(product.getProductDetail(id));
     console.log(id);
   }, [dispatch, id]);
   return (
     <div className="listContainer">
-      <Row className="containerProduct">
-        <Col span={17} className="col-carousel">
-          <Carousel autoplay>
-            <div>
-              <img
-                alt="Product Images"
-                src={logo}
-                className="img-detail-product"
-              />
-            </div>
-            <div>
-              <img
-                alt="Product Images"
-                src={logo}
-                className="img-detail-product"
-              />
-            </div>
-            <div>
-              <img
-                alt="Product Images"
-                src={logo}
-                className="img-detail-product"
-              />
-            </div>
-            <div>
-              <img
-                alt="Product Images"
-                src={logo}
-                className="img-detail-product"
-              />
-            </div>
-          </Carousel>
-        </Col>
-        <Col span={6} className="col-detail-product">
-          <Col className="condition-product">
-            <span>Nuevo</span>
-            <span> - </span>
-            <span>234 vendidos</span>
-          </Col>
-          <Col className="col-title-product">
-            <span className="title-product">Deco reverse Sombrero Oxford</span>
-          </Col>
-          <Col className="col-title-product">
-            <span className="price-product">
-              <span>$ </span>
-              <span>1900</span>
-            </span>
-          </Col>
-          <Col className="col-title-product">
-            <Button type="primary" className="btn">
-              Comprar
-            </Button>
-          </Col>
-        </Col>
-        <Col>
-          <h2 className="description-product">Descripción del producto</h2>
-          <p>{letras}</p>
-        </Col>
-      </Row>
+      {console.log(productDetail)}
+      {productDetail?.item && (
+        <Row className="containerProduct">
+          <Skeleton loading={productDetail.loading.getProductDetail}>
+            <Col span={17} className="col-carousel">
+              <Carousel autoplay>
+                {productDetail.item?.pictures?.map((item) => (
+                  <div key={item.id}>
+                    <img
+                      alt="Product Images"
+                      src={item.url}
+                      className="img-detail-product"
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </Col>
+            <Col span={6} className="col-detail-product">
+              <Col className="condition-product">
+                <span>{productDetail.item.condition}</span>
+                <span> - </span>
+                <span>{productDetail.item.sold_quantity} vendidos</span>
+              </Col>
+              <Col className="col-title-product">
+                <span className="title-product">
+                  {productDetail.item.title}
+                </span>
+              </Col>
+              <Col className="col-title-product">
+                <span className="price-product">
+                  <span>$ </span>
+                  <span>{productDetail.item.price}</span>
+                </span>
+              </Col>
+              <Col className="col-title-product">
+                <Button type="primary" className="btn">
+                  Comprar
+                </Button>
+              </Col>
+            </Col>
+            <Col className="col-description">
+              <h2 className="description-product">Descripción del producto</h2>
+              <p>{productDetail.item.description}</p>
+            </Col>
+          </Skeleton>
+        </Row>
+      )}
     </div>
   );
 };

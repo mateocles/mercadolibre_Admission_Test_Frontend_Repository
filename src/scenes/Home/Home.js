@@ -11,7 +11,6 @@ function useQuery() {
 
 export const Home = () => {
   const dispatch = useDispatch();
-
   const products = useSelector((state) => state.product);
   let query = useQuery();
   useEffect(() => {
