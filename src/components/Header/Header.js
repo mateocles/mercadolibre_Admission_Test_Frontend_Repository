@@ -19,9 +19,9 @@ export const Header = () => {
     }
   };
   return (
-    <nav className="navBar">
-      <Row gutter={[16, 24]} className="headerSearch">
-        <Col span={6} className="imgLogo">
+    <nav className="nav-bar">
+      <Row gutter={[16, 24]} className="header-search">
+        <Col span={6} className="img-logo">
           <Link to={"/"}>
             <img alt="logo mercado libre" src={logo} className="logo" />
           </Link>

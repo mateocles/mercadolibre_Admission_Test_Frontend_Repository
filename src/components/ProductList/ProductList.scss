@@ -1,18 +1,18 @@
-.imgProduct {
+.img-product {
   height: 180px;
   width: 180px;
   border-radius: 4px;
   margin-right: 16px;
 }
 
-.containerProduct {
+.container-product {
   padding: 16px;
   flex: 1;
   width: 100%;
   border-bottom: thin solid #eee;
 }
 
-.listContainer {
+.list-container {
   background-color: #ffffff !important;
   display: flex;
   flex-direction: column;
@@ -21,11 +21,11 @@
   align-items: center;
 }
 
-.dividerList {
+.divider-list {
   margin: 0px !important;
 }
 
-.spanPrice {
+.span-price {
   font-size: 24px;
   font-weight: 400;
   line-height: 1.25;
@@ -33,7 +33,7 @@
   margin-bottom: 32px;
 }
 
-.imgFreeShipping {
+.img-free-shipping {
   width: 15px;
   margin-left: 10px;
   margin-top: -5px;
@@ -75,8 +75,4 @@
   opacity: 0.3;
   -webkit-animation: antSpinMove 1s infinite linear alternate;
   animation: antSpinMove 1s infinite linear alternate;
-}
-.divSpin {
-  padding: 16px;
-  margin: 16px;
 }

@@ -9,10 +9,10 @@ export const ProductList = () => {
   const products = useSelector((state) => state.product);
 
   return (
-    <div className="listContainer">
-      <Skeleton loading={products.loading.getProduct} className="containerProduct">
+    <div className="list-container">
+      <Skeleton loading={products.loading.getProduct} className="container-product">
         {products.items?.slice(0, 4).map((item) => (
-          <div key={item.id} className="containerProduct">
+          <div key={item.id} className="container-product">
             <Link to={`items/${item.id}`}>
               <Row>
                 <Col span={18}>
@@ -21,19 +21,19 @@ export const ProductList = () => {
                       <img
                         alt="Product Images"
                         src={item.picture}
-                        className="imgProduct"
+                        className="img-product"
                       />
                     </Col>
                     <Col span={14}>
                       <Col className="price">
-                        <span className="spanPrice">
+                        <span className="span-price">
                           <span className="simbol">$</span>
                           <span>{item.price.amount}</span>
                           {item.free_shipping ? (
                             <img
                               alt="free shipping"
                               src={freeShipping}
-                              className="imgFreeShipping"
+                              className="img-free-shipping"
                             />
                           ) : (
                             ""

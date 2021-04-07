@@ -17,7 +17,7 @@ export const Public = ({ history }) => {
       <Router history={history}>
         <Header />
         <Content className="content">
-          <Breadcrumb className="breadCrumb">
+          <Breadcrumb className="breadcrumb">
             {products.categories?.map((item, index) => (
               <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>
             ))}
