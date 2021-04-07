@@ -13,9 +13,9 @@ const ProductDetail = () => {
     dispatch(product.getProductDetail(id));
   }, [dispatch, id]);
   return (
-    <div className="listContainer">
+    <div className="list-container">
       {productDetail?.item && (
-        <Row className="containerProduct">
+        <Row className="container-product">
           <Skeleton loading={productDetail.loading.getProductDetail}>
             <Col span={17} className="col-carousel">
               <Carousel autoplay>
