@@ -11,11 +11,9 @@ const ProductDetail = () => {
   let { id } = useParams();
   useEffect(() => {
     dispatch(product.getProductDetail(id));
-    console.log(id);
   }, [dispatch, id]);
   return (
     <div className="listContainer">
-      {console.log(productDetail)}
       {productDetail?.item && (
         <Row className="containerProduct">
           <Skeleton loading={productDetail.loading.getProductDetail}>
@@ -57,7 +55,9 @@ const ProductDetail = () => {
             </Col>
             <Col className="col-description">
               <h2 className="description-product">Descripción del producto</h2>
-              <p>{productDetail.item.description}</p>
+              <p className="pdp-description">
+                {productDetail.item?.description}
+              </p>
             </Col>
           </Skeleton>
         </Row>
